@@ -77,7 +77,7 @@ ul::-webkit-scrollbar-thumb {
 }
 
 li {
-  font-size: 1em; /* Smaller font size for list items */
+  font-size: 1em; 
   margin: 5px 0;
   padding: 5px 10px;
   border-radius: 5px;

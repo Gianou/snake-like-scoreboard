@@ -14,8 +14,8 @@
         <ul class="scrollable-list" *ngIf="scores$ | async as scores; else loading">
             <li class="top3" *ngFor="let score of scores.slice(0, 3); let i = index">
                 <span class="rank">{{ i + 1 }}</span> <!-- Rank starts at 1 -->
-                <span class="player">{{ score.player }}</span>
-                <span class="score">{{ score.score }}</span>
+                <span class="player">{{ score.score.player }}</span>
+                <span class="score">{{ score.score.score }}</span>
             </li>
         </ul>
     </div>
@@ -24,11 +24,16 @@
     <ul class="scrollable-list" *ngIf="scores$ | async as scores; else loading">
         <li *ngFor="let score of scores.slice(3); let i = index" [ngStyle]="{'color': getBackgroundColor(i)}">
             <span class="rank">{{ i + 4 }}</span> <!-- Starts from 4th place -->
-            <span class="player">{{ score.player }}</span>
-            <span class="score">{{ score.score }}</span>
+            <span class="player">{{ score.score.player }}</span>
+            <span class="score">{{ score.score.score }}</span>
         </li>
     </ul>
 
+</div>
+
+<!-- Notification section for new scores -->
+<div *ngIf="newScoreAlert" class="new-score-alert">
+    <p>{{ newScoreAlert }}</p>
 </div>
 
 <ng-template #loading>
