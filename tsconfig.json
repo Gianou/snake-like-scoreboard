@@ -24,6 +24,10 @@
       "dom"
     ]
   },
+  "include": [
+    "src/**/*.ts",
+    "src/canvas-confetti.d.ts" // Add this line if the .d.ts file is in the src directory
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

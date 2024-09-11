@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Score } from '../../models/score';
+import confetti from 'canvas-confetti'; // Import confetti
 
 @Component({
   selector: 'app-scoreboard',
@@ -62,6 +63,11 @@ export class ScoreboardComponent implements OnInit {
           // Find the rank based on index in sorted list
           const rank = allScores.findIndex(scoreData => scoreData.id === newScore.id) + 1;
           this.showAlert(newScore.score, rank);
+
+          // Trigger confetti if it's a high score (e.g., top 3)
+          if (rank <= 3) {
+            this.triggerConfetti();
+          }
         });
       }
 
@@ -81,7 +87,7 @@ export class ScoreboardComponent implements OnInit {
       score: score.score,
       rank: rank
     };
-    this.newScoreAlert = `New Score Detected!`; // You can keep this as a static message if using separate data display
+    this.newScoreAlert = `New High Score!`;
 
     // Clear any existing timeout
     if (this.alertTimeout) {
@@ -102,4 +108,23 @@ export class ScoreboardComponent implements OnInit {
       clearTimeout(this.alertTimeout);
     }
   }
+
+  triggerConfetti(): void {
+    // Confetti from bottom-left
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x: 0.2, y: 1 }, // Adjusted from bottom-left
+      colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00']
+    });
+
+    // Confetti from bottom-right
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x: 0.8, y: 1 }, // Adjusted from bottom-right
+      colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00']
+    });
+  }
+
 }
