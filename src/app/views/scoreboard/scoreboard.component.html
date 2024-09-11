@@ -1,0 +1,11 @@
+<h2>Scoreboard</h2>
+
+<ul *ngIf="scores$ | async as scores; else loading">
+    <li *ngFor="let score of scores">
+        {{ score.player }}: {{ score.score }}
+    </li>
+</ul>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>
