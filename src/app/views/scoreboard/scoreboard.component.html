@@ -1,10 +1,35 @@
+<h1>GAMESP32</h1>
+
 <h2>Scoreboard</h2>
 
-<ul *ngIf="scores$ | async as scores; else loading">
-    <li *ngFor="let score of scores">
-        {{ score.player }}: {{ score.score }}
-    </li>
-</ul>
+<div class="scoreboard-container">
+    <div class="header">
+        <span class="header-rank">Rank</span>
+        <span class="header-player">Player</span>
+        <span class="header-score">Score</span>
+    </div>
+
+    <!-- Fixed section for the top 3 players -->
+    <div class="fixed">
+        <ul class="scrollable-list" *ngIf="scores$ | async as scores; else loading">
+            <li class="top3" *ngFor="let score of scores.slice(0, 3); let i = index">
+                <span class="rank">{{ i + 1 }}</span> <!-- Rank starts at 1 -->
+                <span class="player">{{ score.player }}</span>
+                <span class="score">{{ score.score }}</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Scrollable section for the rest of the players -->
+    <ul class="scrollable-list" *ngIf="scores$ | async as scores; else loading">
+        <li *ngFor="let score of scores.slice(3); let i = index" [ngStyle]="{'color': getBackgroundColor(i)}">
+            <span class="rank">{{ i + 4 }}</span> <!-- Starts from 4th place -->
+            <span class="player">{{ score.player }}</span>
+            <span class="score">{{ score.score }}</span>
+        </li>
+    </ul>
+
+</div>
 
 <ng-template #loading>
     <p>Loading...</p>

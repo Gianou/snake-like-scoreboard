@@ -1,0 +1,124 @@
+/* Import retro pixel font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* General page styling */
+:host {
+  display: block;
+  font-family: 'Press Start 2P', cursive; /* Retro arcade font */
+  background: #000; /* Dark background */
+  color: #fff; /* White text for the page */
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3em; /* Slightly smaller title */
+  margin: 0;
+  color: #fff; /* White color for the title */
+  text-shadow: 2px 2px 0 #ff0000; /* Red shadow */
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2em; /* Slightly smaller subtitle */
+  margin: 20px 0;
+  color: #fff; /* White color for subtitle */
+  text-shadow: 1px 1px 0 #000; /* Subtle black shadow */
+  letter-spacing: 1px;
+}
+
+.scoreboard-container {
+  display: inline-block;
+  width: 80%; /* Adjust container width */
+  max-width: 800px; /* Max width for better readability */
+  text-align: left;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffff00; /* Yellow color for header */
+  border-bottom: 2px solid #ffff00; /* Yellow border */
+  padding-bottom: 5px;
+}
+
+.header span {
+  padding: 5px 10px;
+}
+
+ul {
+  list-style-type: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+  max-height: 400px; /* Set max height to make the list scrollable */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: transparent transparent; /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar in Webkit browsers (Chrome, Safari) */
+ul::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* or use rgba(0, 0, 0, 0) */
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: transparent; /* Invisible thumb */
+}
+
+.fixed {
+  position: sticky; /* Sticky positioning to keep the top items fixed */
+  top: 0;
+  background: rgba(0, 0, 0, 0.9); /* Darker background for visibility */
+  z-index: 1; /* Ensure it stays above other items */
+}
+
+li {
+  font-size: 1em; /* Smaller font size for list items */
+  margin: 5px 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: solid 1px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+  /* box-shadow: 0 0 5px rgba(0, 255, 0, 0.6); Subtle neon green glow */
+}
+
+/* Special styles for the top 3 positions */
+.top3:nth-child(1) {
+  /* background: linear-gradient(145deg, #ffd700, #ffcc00); Gold gradient */
+  /* color: #000 !important; */
+  color: gold !important;
+  border: 5px solid; /* Gold border */
+  font-weight: bold;
+}
+
+.top3:nth-child(2) {
+ /* background: linear-gradient(145deg, #ffd700, #ffcc00); Gold gradient */
+  /* color: #000 !important; */
+  color: silver !important;
+  border: 5px solid; /* Gold border */
+  font-weight: bold;
+}
+
+.top3:nth-child(3) {
+  /* background: linear-gradient(145deg, #ffd700, #ffcc00); Gold gradient */
+  /* color: #000 !important; */
+  color: #cd7f32 !important;
+  border: 5px solid; /* Gold border */
+  font-weight: bold;
+}
+
+.rank, .player, .score {
+  padding: 5px;
+}
+
+ng-template {
+  color: #fff; /* White text for loading message */
+  font-size: 1em;
+}
