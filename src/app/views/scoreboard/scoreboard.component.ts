@@ -25,6 +25,8 @@ export class ScoreboardComponent implements OnInit {
     '#ff0000'  // Red
   ];
   newScoreAlert: string | null = null; // Variable to hold the new score alert message
+  alertData: { player: string; score: number; rank: number } | null = null; // Data for the alert
+  alertTimeout: any; // Variable to hold the timeout reference
 
   constructor(private firestore: AngularFirestore) {
     // Initialize the observable with sorting by score in descending order
@@ -74,11 +76,30 @@ export class ScoreboardComponent implements OnInit {
   }
 
   showAlert(score: Score, rank: number): void {
-    this.newScoreAlert = `New Score Detected!\n\nPlayer: ${score.player}\nScore: ${score.score}\nRank: ${rank}`;
+    this.alertData = {
+      player: score.player,
+      score: score.score,
+      rank: rank
+    };
+    this.newScoreAlert = `New Score Detected!`; // You can keep this as a static message if using separate data display
 
-    // Clear the alert after a few seconds
-    setTimeout(() => {
+    // Clear any existing timeout
+    if (this.alertTimeout) {
+      clearTimeout(this.alertTimeout);
+    }
+
+    // Automatically hide the alert after 4 seconds
+    this.alertTimeout = setTimeout(() => {
       this.newScoreAlert = null;
-    }, 5000);
+      this.alertData = null;
+    }, 4000);
+  }
+
+  closeAlert(): void {
+    this.newScoreAlert = null;
+    this.alertData = null;
+    if (this.alertTimeout) {
+      clearTimeout(this.alertTimeout);
+    }
   }
 }

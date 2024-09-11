@@ -28,14 +28,25 @@
             <span class="score">{{ score.score.score }}</span>
         </li>
     </ul>
-
-</div>
-
-<!-- Notification section for new scores -->
-<div *ngIf="newScoreAlert" class="new-score-alert">
-    <p>{{ newScoreAlert }}</p>
 </div>
 
 <ng-template #loading>
     <p>Loading...</p>
 </ng-template>
+
+<!-- Overlay for new score alert -->
+<div class="overlay" *ngIf="alertData">
+    <div class="overlay-content">
+        <h3>New Score!</h3>
+        <div class="rank">Rank: {{ alertData.rank }}</div> <!-- Highlighted rank -->
+        <div class="alert-item">
+            <span class="alert-key">Player:</span>
+            <span class="alert-value">{{ alertData.player }}</span>
+        </div>
+        <div class="alert-item">
+            <span class="alert-key">Score:</span>
+            <span class="alert-value">{{ alertData.score }}</span>
+        </div>
+        <!-- <button (click)="closeAlert()">OK</button> -->
+    </div>
+</div>

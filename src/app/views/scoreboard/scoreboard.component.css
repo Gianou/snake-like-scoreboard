@@ -122,3 +122,88 @@ ng-template {
   color: #fff; /* White text for loading message */
   font-size: 1em;
 }
+
+
+/* Basic styles for the scoreboard */
+.scoreboard-container {
+  /* Your existing styles */
+}
+
+.header {
+  /* Your existing styles */
+}
+
+.scrollable-list {
+  /* Your existing styles */
+}
+
+
+
+/* Existing styles */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Black background with slight transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Make sure it appears above other content */
+  transition: opacity 0.5s ease-out; /* Smooth transition for disappearing */
+}
+
+.overlay-content {
+  background: #000; /* Black background for the content */
+  border: 2px solid #fff; /* White border for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff; /* White text */
+  text-align: center; /* Center text */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  width: 100%;
+}
+
+.overlay-content h3 {
+  margin: 0;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.overlay-content .alert-item {
+  display: flex;
+  justify-content: space-between; /* Space between key and value */
+  margin-bottom: 15px; /* Space between lines */
+  font-size: 1.2em; /* Larger font size for better readability */
+}
+
+.overlay-content .alert-key {
+  font-weight: bold;
+}
+
+.overlay-content .alert-value {
+  font-weight: normal;
+}
+
+.overlay-content .rank {
+  font-size: 1.4em; /* Larger font size for the rank */
+  color: #ff0000; /* Red color for the rank */
+  font-weight: bold;
+  margin-bottom: 15px; /* Space below the rank */
+}
+
+.overlay-content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.overlay-content button:hover {
+  background-color: #0056b3;
+}
