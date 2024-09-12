@@ -12,8 +12,8 @@
 }
 
 h1 {
-  font-size: 3em; /* Slightly smaller title */
-  margin: 0;
+  font-size: 5em; /* Slightly smaller title */
+  padding: 12px;
   color: #fff; /* White color for the title */
   text-shadow: 2px 2px 0 #ff0000; /* Red shadow */
   letter-spacing: 1px;
