@@ -1,6 +1,3 @@
-/* Import retro pixel font */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 
 /* General page styling */
 :host {
@@ -223,16 +220,20 @@ ng-template {
 @media (max-width: 1100px) {
   :host{
     padding-top: 0px;
+    width: 100%;
   }
-p{
+  h1{
+    font-size: 36px;
+  }
+  p{
   margin-top: -20px;
   padding-bottom: 20px;
   align-self: flex-end;
   text-align: right;
   font-size: small;
-}
+  }
 
-.header {
+  .header {
   display: grid;
   grid-template-columns: 1fr 3fr 2fr;
   margin-bottom: 10px;
@@ -241,6 +242,6 @@ p{
   color: #ffff00; /* Yellow color for header */
   border-bottom: 2px solid #ffff00; /* Yellow border */
   padding-bottom: 5px;
-}
+  }
 }
 
