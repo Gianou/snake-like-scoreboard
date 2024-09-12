@@ -1,6 +1,7 @@
 /* Import retro pixel font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+
 /* General page styling */
 :host {
   display: block;
@@ -9,19 +10,29 @@
   color: #fff; /* White text for the page */
   text-align: center;
   padding: 20px;
+  padding-top: 90px ;
+  margin: 20px;
 }
 
 h1 {
   font-size: 5em; /* Slightly smaller title */
-  padding: 12px;
+  padding: 0px;
   color: #fff; /* White color for the title */
-  text-shadow: 2px 2px 0 #ff0000; /* Red shadow */
+  text-shadow: 4px 4px 0 #343434; /* Red shadow */
   letter-spacing: 1px;
+}
+
+p{
+  margin-top: -40px;
+  padding-bottom: 20px;
+  align-self: flex-end;
+  text-align: right;
 }
 
 h2 {
   font-size: 2em; /* Slightly smaller subtitle */
-  margin: 20px 0;
+  padding-bottom: 0px;
+
   color: #fff; /* White color for subtitle */
   text-shadow: 1px 1px 0 #000; /* Subtle black shadow */
   letter-spacing: 1px;
@@ -81,7 +92,7 @@ li {
   margin: 5px 0;
   padding: 5px 10px;
   border-radius: 5px;
-  border: solid 1px;
+  border: solid 2px;
   display: grid;
   grid-template-columns: 1fr 3fr 2fr;
   align-items: center;

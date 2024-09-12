@@ -12,10 +12,16 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 import { ScoreboardComponent } from './views/scoreboard/scoreboard.component';
+import { LinkedInQrComponent } from './components/linked-in-qr/linked-in-qr.component';
+import { SelfLinkComponent } from './components/self-link/self-link.component';
+import { GithubQrComponent } from './components/github-qr/github-qr.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ScoreboardComponent
+    ScoreboardComponent,
+    LinkedInQrComponent,
+    SelfLinkComponent,
+    GithubQrComponent
   ],
   imports: [
     BrowserModule,
